@@ -32,3 +32,10 @@ yarn-error.log*
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Temporary scripts & reports
+scratch/
+*.patch
+replace_*.py
+lighthouse-report*.json
+

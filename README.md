@@ -1,46 +1,48 @@
-# Om Chauhan - Resume & Portfolio
+# Om Chauhan — Interactive Resume & Portfolio
 
-Welcome to the source code for my interactive resume and portfolio website. This project showcases my skills, experience, and projects in a dynamic and visually engaging web application.
+An interactive, single-page portfolio built as a **static Vite + React 19 + TypeScript** application. No backend, no database — all content is managed in a single typed data module.
 
-## 📸 Snapshots
+## Tech Stack
 
-### Frontend View
-Here is a snapshot of the running web application:
+| Layer | Tech |
+|---|---|
+| Framework | Vite 8 + React 19 + TypeScript 7 |
+| Styling | Tailwind CSS v4 |
+| 3D / Animation | Spline (`@splinetool/react-spline`) |
+| Icons | Lucide React |
+| UI Primitives | shadcn/ui (local copies in `src/components/ui/`) |
 
-![Frontend Snapshot](docs/frontend-snapshot.png)
+## Project Structure
 
-*(Note: The root Vite application can also be viewed via `docs/root-vite-snapshot.png`)*
+```
+src/
+├── content/
+│   └── data.ts          # All resume data (typed exports)
+├── components/
+│   └── ui/              # UI primitives: timeline, spline, badge, etc.
+├── App.tsx              # Single-page layout — JSX only, no hardcoded data
+├── index.css            # Design tokens + global styles
+└── main.tsx             # React entry point
+index.html               # Google Fonts + app shell
+tailwind.config.js       # Tailwind theme extension
+```
 
-## 🚀 Features
+## Running Locally
 
-- **Interactive UI**: Built with modern web technologies, providing a seamless user experience.
-- **Dynamic Content**: Data is managed via a dedicated backend, allowing for easy updates to projects, skills, and experience without hardcoding.
-- **Responsive Design**: Works great on both desktop and mobile devices.
+```bash
+npm install
+npm run dev
+# or
+./start.sh
+```
 
-## 🛠 Tech Stack
+Open `http://localhost:5173`.
 
-- **Frontend**: Next.js / React (with Vite setup available), Tailwind CSS, Spline (3D elements)
-- **Backend**: Node.js, Express, MongoDB
-- **Tools**: Playwright for snapshots, concurrently for development
+## Updating Content
 
-## 💻 Running Locally
+All resume data lives in [`src/content/data.ts`](src/content/data.ts). Edit the exported `resumeData` object (name, education, skills, projects, achievements, contact) or the `timelineMilestones` array — the site rebuilds automatically.
 
-To run the full stack locally:
+## Assets
 
-1. Clone the repository
-2. Install dependencies for both backend and frontend:
-   ```bash
-   cd backend && npm install
-   cd ../frontend && npm install
-   ```
-3. Start the application stack (both backend and frontend servers):
-   ```bash
-   ./start.sh
-   ```
-4. Access the frontend at `http://localhost:3000`
-
-## 📁 Project Structure
-
-- `frontend/` - Contains the Next.js React frontend application.
-- `backend/` - Contains the Node.js API that serves dynamic data for the resume.
-- `docs/` - Contains website snapshots and documentation assets.
+- `Om_Chauhan_Resume.pdf` — downloadable PDF resume (served as a static asset)
+- `docs/` — screenshots and documentation images

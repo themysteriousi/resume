@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // Display font: bold, geometric — used for all headings
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        // Body font: neutral, highly legible — used for all body text
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

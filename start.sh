@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Starting Backend and Frontend servers..."
-npx -y concurrently -k -p "[{name}]" -n "Backend,Frontend" -c "bgBlue.bold,bgGreen.bold" \
-  "cd backend && npm run dev" \
-  "cd frontend && npm run dev"
+# Start the Vite dev server (static site — no backend)
+echo "Starting dev server..."
+npm run dev
