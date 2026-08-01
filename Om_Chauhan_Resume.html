@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Om Chauhan - Resume</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #475569;
+            --accent-color: #2563eb;
+            --text-color: #334155;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.45;
+            background-color: #ffffff;
+            padding: 40px;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .name-title h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--secondary-color);
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        p.summary {
+            font-size: 13px;
+            text-align: justify;
+        }
+
+        /* Skills layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .skill-category strong {
+            color: var(--primary-color);
+        }
+
+        /* Projects & Experience */
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .project-links {
+            font-size: 12px;
+        }
+
+        .project-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .project-item ul {
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .project-item li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .school-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .degree {
+            font-style: italic;
+        }
+
+        /* Activities & Achievements */
+        .activities-list {
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .activities-list li {
+            margin-bottom: 3px;
+        }
+
+        /* Interests / Profile footer */
+        .interests-text {
+            font-size: 13px;
+            text-align: justify;
+        }
+
+        /* Print formatting rules */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12px;
+            }
+            .resume-container {
+                max-width: 100%;
+            }
+            header {
+                margin-bottom: 15px;
+            }
+            .section {
+                margin-bottom: 15px;
+            }
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            .project-item {
+                margin-bottom: 10px;
+            }
+            .project-item ul {
+                margin-left: 15px;
+            }
+            a {
+                color: var(--primary-color) !important;
+                text-decoration: none;
+            }
+            .project-links a::after {
+                content: " (" attr(href) ")";
+                font-size: 10px;
+                color: var(--secondary-color);
+            }
+            /* Avoid page breaks inside sections */
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header>
+            <div class="name-title">
+                <h1>Om Chauhan</h1>
+            </div>
+            <div class="contact-info">
+                <span>📍 Pune, Maharashtra, 411018</span>
+                <span>📞 +91 7862909368</span>
+                <span>✉️ <a href="mailto:omchauhan5505@gmail.com">omchauhan5505@gmail.com</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/om-chauhan-7a2b0a290" target="_blank">linkedin.com/in/om-chauhan-7a2b0a290</a></span>
+                <span>🐙 <a href="https://github.com/themysteriousi" target="_blank">github.com/themysteriousi</a></span>
+            </div>
+        </header>
+
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p class="summary">
+                Result-oriented Data Science and Artificial Intelligence student with hands-on experience building, optimizing, and deploying machine learning workflows and production-grade system infrastructure. Proactive builder skilled in Python, cloud deployments, and SRE monitoring. Experienced in automating infrastructure pipelines, configuring secure networking, and developing self-healing operational scripts to optimize application reliability.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div>
+                    <span class="school-name">Dr. D. Y. Patil Institute of Technology</span> - <span class="degree">B.E. in Artificial Intelligence and Data Science</span>
+                </div>
+                <div>Expected June 2027</div>
+            </div>
+            <div style="font-size: 12px; color: var(--secondary-color);">Pimpri-Chinchwad, Pune, India</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Programming & Libraries:</strong> Python, JavaScript/TypeScript, SQL, Git, React, Node.js, Express, FastAPI, Flask
+                </div>
+                <div class="skill-category">
+                    <strong>DevOps & Cloud (SRE):</strong> Docker, Docker Compose, Ansible, AWS EC2, UFW/Firewalls, Nginx, IPFS
+                </div>
+                <div class="skill-category">
+                    <strong>AI, NLP & Databases:</strong> Llama 3.2, LangChain, ChromaDB, Transformers, BERT, Embeddings, Vector Databases
+                </div>
+                <div class="skill-category">
+                    <strong>Monitoring & Analytics:</strong> Prometheus, Grafana, Node Exporter, Power BI, Tableau
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects & Experience</div>
+
+            <!-- Project 1: DevGuard (SRE) -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">DevGuard: Automated Infrastructure Deployment & Intelligent Self-Healing Platform</span>
+                    <span class="project-links">
+                        <a href="https://github.com/themysteriousi/devguard" target="_blank">GitHub</a>
+                        <a href="http://13.201.93.49" target="_blank">Live Demo</a>
+                    </span>
+                </div>
+                <ul>
+                    <li>Deployed a multi-container monitoring and application stack to AWS EC2 using multi-stage Docker builds, minimizing runtime image footprints by 60%.</li>
+                    <li>Wrote configuration playbooks in Ansible to provision dependencies, set up Nginx reverse proxy, and enforce security policies using host firewall rules (UFW).</li>
+                    <li>Designed an automated Prometheus and Grafana pipeline to ingest hardware metrics and application stats, providing real-time infrastructure visualization dashboards.</li>
+                    <li>Built a custom Python Z-score anomaly detector script to analyze metric streams and auto-trigger recovery scripts to restore services during traffic surges.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2: LexAgent -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">LexAgent: Multi-Agent Legal Intelligence & RAG System</span>
+                    <span class="project-links">
+                        <a href="https://github.com/Rishikesh073/JUDICARY-SYSTEM" target="_blank">GitHub</a>
+                    </span>
+                </div>
+                <ul>
+                    <li>Developed a decoupled 3-tier legal intelligence platform featuring an interactive React workspace, an Express orchestration bridge, and a high-performance FastAPI RAG engine.</li>
+                    <li>Engineered a 4-stage Multi-Agent Orchestration Engine utilizing LangChain and local Llama 3.2 to parse natural language queries, perform semantic searches across 37,000+ Supreme Court judgments, synthesize holding arguments, and run cross-referenced validation.</li>
+                    <li>Optimized retrieval latency to sub-2 seconds by chunking legal PDFs using Sentence Transformers (all-MiniLM-L6-v2) and persist-indexing embeddings in a local vector vault with ChromaDB.</li>
+                    <li>Built a real-time event streaming pipeline using Server-Sent Events (SSE) to feed agent telemetry and "Chain of Thought" status updates from the Python engine through Node.js to the frontend visualizer.</li>
+                    <li>Integrated a Web3 decentralized document vault using IPFS (via Pinata API) to store case memorandums, securing tamper-proof metadata and providing cryptographic Content Identifiers (CIDs) to users.</li>
+                </ul>
+            </div>
+
+            <!-- Project 3: Smart Energy Trading Controller -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">Smart Energy Trading Controller (ML-Enhanced IoT)</span>
+                </div>
+                <ul>
+                    <li>Engineered an ML-based regression model predicting household energy consumption patterns to automate electrical energy trading decisions.</li>
+                    <li>Integrated real-time predictive insights with an IoT controller prototype, enabling automated routing of power resources based on expected demand.</li>
+                </ul>
+            </div>
+
+            <!-- Project 4: QuoraTech Dashboard -->
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-title">QuoraTech Dashboard: AI-Powered Tech News Curation</span>
+                    <span class="project-links">
+                        <a href="https://github.com/themysteriousi/quora-" target="_blank">GitHub</a>
+                    </span>
+                </div>
+                <ul>
+                    <li>Developed an automated RSS-based content curation pipeline with a Flask backend and React frontend to fetch, summarize, and manage tech news.</li>
+                    <li>Integrated the Groq API (LLaMA-3.3-70b) to dynamically draft engaging Quora posts and identify relevant user questions from raw RSS feeds.</li>
+                    <li>Built a real-time Server-Sent Events (SSE) logging system to monitor background AI summarization tasks directly within a Vite/Tailwind CSS dashboard.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Activities & Achievements</div>
+            <ul class="activities-list">
+                <li><strong>Leadership:</strong> Treasurer, Data Science & Artificial Intelligence (DSAII) Club — Managed budgeting and organized college tech workshops.</li>
+                <li><strong>Hackathons:</strong> Competed in Vortexa 2.0, Arcadia, Smart India Hackathon (SIH), and Solana Cypherpunk.</li>
+                <li><strong>Certifications:</strong> Python (Data Science), Artificial Intelligence Foundational Track.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
