@@ -97,7 +97,7 @@ export default function Nav() {
             </a>
           ))}
           <div className="pt-2 flex items-center gap-3 border-t border-border">
-            <a href="Om_Chauhan_Resume.pdf" target="_blank" className="text-primary flex items-center gap-1">
+            <a href="Om_Chauhan_Resume.pdf" target="_blank" rel="noreferrer" className="text-primary flex items-center gap-1">
               <FileText size={14} /> Download Resume
             </a>
           </div>

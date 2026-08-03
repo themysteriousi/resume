@@ -38,4 +38,7 @@ scratch/
 *.patch
 replace_*.py
 lighthouse-report*.json
+generate_catalog.py
+skills_catalog*.md
+
 

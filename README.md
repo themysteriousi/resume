@@ -46,3 +46,15 @@ All resume data lives in [`src/content/data.ts`](src/content/data.ts). Edit the 
 
 - `Om_Chauhan_Resume.pdf` — downloadable PDF resume (served as a static asset)
 - `docs/` — screenshots and documentation images
+
+## Deployment
+
+This app is a static Vite build, so it can be deployed to any static host.
+
+For `wassupom.me`, the repo already includes a `CNAME` file for custom-domain hosting. Point the domain to your hosting provider, then deploy the Vite build output from `npm run build`.
+
+Common options:
+
+- Vercel: import the repo, keep the default build command `npm run build`, and add `wassupom.me` as a custom domain.
+- Netlify: set the build command to `npm run build`, publish `dist`, and add `wassupom.me` in domain settings.
+- GitHub Pages: publish the contents of `dist` and keep the `CNAME` file in place for the custom domain.

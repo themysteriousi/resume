@@ -40,6 +40,41 @@ export default function CosmosHero() {
     locations: []
   });
 
+  // Forward global mouse movements to Spline canvas for full-screen tracking
+  useEffect(() => {
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      const splineCanvas = containerRef.current.querySelector('canvas:not(.hero-canvas)');
+      if (splineCanvas && e.target !== splineCanvas) {
+        splineCanvas.dispatchEvent(new MouseEvent('mousemove', {
+          clientX: e.clientX,
+          clientY: e.clientY,
+          screenX: e.screenX,
+          screenY: e.screenY,
+          bubbles: true,
+          cancelable: true,
+          view: window
+        }));
+        splineCanvas.dispatchEvent(new PointerEvent('pointermove', {
+          clientX: e.clientX,
+          clientY: e.clientY,
+          screenX: e.screenX,
+          screenY: e.screenY,
+          bubbles: true,
+          cancelable: true,
+          view: window
+        }));
+      }
+    };
+
+    window.addEventListener('mousemove', handleGlobalMouseMove);
+    window.addEventListener('pointermove', handleGlobalMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('pointermove', handleGlobalMouseMove);
+    };
+  }, []);
+
   // Initialize Three.js cosmic background canvas
   useEffect(() => {
     if (!canvasRef.current) return;
