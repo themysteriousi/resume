@@ -47,11 +47,18 @@ export default function About() {
     vectors: 37420
   });
 
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const terminalContainerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (terminalContainerRef.current) {
+      terminalContainerRef.current.scrollTop = terminalContainerRef.current.scrollHeight;
+    }
   }, [terminalLogs]);
 
   // Live telemetry pulse simulator
@@ -266,7 +273,7 @@ export default function About() {
         </div>
 
         {/* Terminal Output */}
-        <div className="p-5 font-mono text-xs space-y-2 overflow-y-auto max-h-[300px] flex-1 terminal-scroll">
+        <div ref={terminalContainerRef} className="p-5 font-mono text-xs space-y-2 overflow-y-auto max-h-[300px] flex-1 terminal-scroll">
           {terminalLogs.map((log, idx) => (
             <div 
               key={idx} 
@@ -283,7 +290,6 @@ export default function About() {
               {log}
             </div>
           ))}
-          <div ref={terminalEndRef}></div>
         </div>
 
         {/* Terminal Command Shortcuts */}
