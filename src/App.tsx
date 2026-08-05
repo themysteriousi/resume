@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { Agentation } from 'agentation';
 import { SterlingGateKineticNavigation } from './components/ui/sterling-gate-kinetic-navigation';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   // Scroll to top on mount
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

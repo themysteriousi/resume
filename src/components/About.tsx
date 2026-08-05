@@ -51,11 +51,7 @@ export default function About() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const terminalPanel = terminalEndRef.current?.parentElement;
-    terminalPanel?.scrollTo({
-      top: terminalPanel.scrollHeight,
-      behavior: 'smooth',
-    });
+    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [terminalLogs]);
 
   // Live telemetry pulse simulator
